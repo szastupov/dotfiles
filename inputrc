@@ -1,1 +1,5 @@
 set completion-ignore-case On
+set show-all-if-ambiguous On
+set match-hidden-files Off
+"\e[A": history-search-backward
+"\e[B": history-search-forward

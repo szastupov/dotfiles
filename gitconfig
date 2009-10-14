@@ -1,0 +1,10 @@
+# vim:syntax=gitconfig
+[user]
+	name = Stepan Zastupov
+	email = redchrom@gmail.com
+[color]
+	ui = true
+[url "git://git.gnome.org/"]
+	insteadof = gnome:
+[sendemail]
+	smtpserver = /usr/bin/msmtp

@@ -55,6 +55,7 @@ alias sr='ssh -l root'
 alias go='gnome-open'
 alias wcat='wget -q -O -'
 alias ypsilon='rlwrap ypsilon'
+alias ocaml='rlwrap ocaml'
 alias e='emacs -nw'
 
 (grep --help 2>/dev/null |grep -- --color) >/dev/null && \

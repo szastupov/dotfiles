@@ -6,5 +6,7 @@
 	ui = true
 [url "git://git.gnome.org/"]
 	insteadof = gnome:
+[url "git@github.com:redchrom/"]
+	insteadof = github:
 [sendemail]
 	smtpserver = /usr/bin/msmtp

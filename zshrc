@@ -43,14 +43,6 @@ setopt  HIST_IGNORE_SPACE
 setopt  HIST_REDUCE_BLANKS
 setopt  No_Beep
 
-alias -g du='du -h'
-alias -g ls='ls --color=auto'
-alias -g la='ls -lah --color=auto'
-alias -g ll='ls -lh --color=auto'
-alias -g cp='cp -v'
-alias -g mv='mv -v'
-alias -g rm='rm -v'
-alias -g df='df -h'
 alias sr='ssh -l root'
 alias go='gnome-open'
 alias wcat='wget -q -O -'

@@ -81,3 +81,4 @@
 
 (load "~/dotfiles/emacs/devel")
 
+(server-start)

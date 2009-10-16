@@ -48,7 +48,7 @@ alias go='gnome-open'
 alias wcat='wget -q -O -'
 alias ypsilon='rlwrap ypsilon'
 alias ocaml='rlwrap ocaml'
-alias e='emacs -nw'
+alias ec='emacsclient'
 
 (grep --help 2>/dev/null |grep -- --color) >/dev/null && \
 export GREP_OPTIONS='--color=auto'

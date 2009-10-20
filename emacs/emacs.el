@@ -56,6 +56,7 @@
  '(font-lock-string-face ((((class color) (min-colors 8)) (:foreground "#61CE3C"))))
  '(font-lock-type-face ((((class color) (min-colors 88) (background dark)) (:foreground "#8DA6CE"))))
  '(font-lock-variable-name-face ((((class color) (min-colors 88) (background dark)) nil)))
+ '(fringe ((((class color) (background dark)) nil)))
  '(highlight ((((class color) (min-colors 88) (background dark)) (:background "#222222"))))
  '(mode-line ((((class color) (min-colors 88)) (:background "grey75" :foreground "black"))))
  '(region ((((class color) (min-colors 88) (background dark)) (:background "#253B76")))))

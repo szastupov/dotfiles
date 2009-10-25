@@ -59,6 +59,11 @@
  '(fringe ((((class color) (background dark)) nil)))
  '(highlight ((((class color) (min-colors 88) (background dark)) (:background "#222222"))))
  '(mode-line ((((class color) (min-colors 88)) (:background "grey75" :foreground "black"))))
+ '(quack-pltish-comment-face ((((class color) (background dark)) (:inherit font-lock-comment-face))))
+ '(quack-pltish-defn-face ((t (:inherit font-lock-function-name-face))))
+ '(quack-pltish-keyword-face ((t (:inherit font-lock-keyword-face))))
+ '(quack-pltish-paren-face ((((class color) (background dark)) (:foreground "magenta3"))))
+ '(quack-pltish-selfeval-face ((((class color) (background dark)) (:inherit font-lock-constant-face))))
  '(region ((((class color) (min-colors 88) (background dark)) (:background "#253B76")))))
 
 

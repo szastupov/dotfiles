@@ -17,7 +17,7 @@ precmd() {
 	case $TERM in
 		*xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]0;[%~]\a"
 		;;
-		screen) print -Pn "\ek[%~]\e\\" && print -Pn "\e]0;[%~] %m (screen)\a"
+		screen) print -Pn "\ek[%~]\e\\"
 		;;
 	esac
 }
@@ -27,7 +27,7 @@ preexec() {
 	case $TERM in
 		*xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]0;<$1> [%~]\a"
 		;;
-		screen) print -Pn "\ek<$1> [%~]\e\\" && print -Pn "\e]0;<$1> [%~] %m (screen)\a"
+		screen) print -Pn "\ek<$1> [%~]\e\\"
 		;;
 	esac
 }

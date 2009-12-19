@@ -33,12 +33,14 @@
 				html-mode-hook
 				java-mode-hook
 				tuareg-mode-hook
+				haskell-mode-hook
 				shell-script-mode))
   (add-hook hook 'devel-hook))
 
 (setq load-path (cons "~/dotfiles/emacs/site" load-path))
 (require 'quack)
 
+;;Ocaml
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 
@@ -51,4 +53,9 @@
   (local-set-key "\C-cm" 'make))
 
 (add-hook 'tuareg-mode-hook 'my-tuareg-hook)
+;;
 
+;;Haskell
+(load "~/dotfiles/emacs/site/haskell-mode/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)

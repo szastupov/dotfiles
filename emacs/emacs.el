@@ -30,6 +30,7 @@
  '(scroll-conservatively 10000)
  '(scroll-step 1)
  '(show-paren-mode t)
+ '(use-dialog-box nil)
  '(size-indication-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil)

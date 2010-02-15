@@ -76,10 +76,9 @@
 (defvar backup-dir "~/.emacs.d/backup/")
 (setq backup-directory-alist (list (cons "." backup-dir)))
 
-(require 'iswitchb)
-(dolist (b '("*Messages*" "*Completions*" "*Buffer List*"))
-  (add-to-list 'iswitchb-buffer-ignore b))
-(iswitchb-mode 1)
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
 
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))

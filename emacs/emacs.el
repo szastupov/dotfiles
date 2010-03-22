@@ -30,13 +30,13 @@
  '(scroll-conservatively 10000)
  '(scroll-step 1)
  '(show-paren-mode t)
- '(use-dialog-box nil)
  '(size-indication-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil)
  '(tooltip-delay 0.5)
  '(tooltip-mode t)
- '(tuareg-library-path "/usr/lib64/ocaml"))
+ '(tuareg-library-path "/usr/lib64/ocaml")
+ '(use-dialog-box nil))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -59,6 +59,7 @@
  '(font-lock-variable-name-face ((((class color) (min-colors 88) (background dark)) nil)))
  '(fringe ((((class color) (background dark)) nil)))
  '(highlight ((((class color) (min-colors 88) (background dark)) (:background "#222222"))))
+ '(minibuffer-prompt ((((background dark)) (:foreground "#729fcf"))))
  '(mode-line ((((class color) (min-colors 88)) (:background "grey75" :foreground "black"))))
  '(quack-pltish-comment-face ((((class color) (background dark)) (:inherit font-lock-comment-face))))
  '(quack-pltish-defn-face ((t (:inherit font-lock-function-name-face))))

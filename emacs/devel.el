@@ -60,10 +60,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;; Cedet
-(load "/home/redchrom/src/cedet/common/cedet.el")
-(semantic-load-enable-code-helpers)
-(require 'semantic-ia)
-(require 'semantic-gcc)
 
 (defun my-cedet-hook ()
   (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
@@ -74,3 +70,12 @@
   (local-set-key "\C-cs" 'semantic-ia-show-summary))
 
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
+
+(defun c-libraries-load ()
+  (interactive)
+  (load "/home/redchrom/src/cedet/common/cedet.el")
+  (semantic-load-enable-code-helpers)
+  (require 'semantic-ia)
+  (require 'semantic-gcc))
+
+(add-hook 'c-initialization-hook 'c-libraries-load)

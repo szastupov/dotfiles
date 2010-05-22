@@ -71,11 +71,30 @@
 
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
 
+(defun pkg-config (pkg)
+  (let* ((cmd  (concat "pkg-config --cflags-only-I " pkg))
+		 (output (shell-command-to-string cmd)))
+	(split-string (replace-regexp-in-string "-I" "" output))))
+
 (defun c-libraries-load ()
   (interactive)
-  (load "/home/redchrom/src/cedet/common/cedet.el")
+  (load "~/src/cedet/common/cedet.el")
   (semantic-load-enable-code-helpers)
   (require 'semantic-ia)
-  (require 'semantic-gcc))
+  (require 'semantic-gcc)
+
+  (setq-mode-local c-mode semanticdb-find-default-throttle
+				   '(project unloaded system recursive))
+  (setq-mode-local c++-mode semanticdb-find-default-throttle
+				   '(project unloaded system recursive))
+
+  (require 'semanticdb-ectag)
+  (semantic-load-enable-primary-exuberent-ctags-support)
+
+  (global-ede-mode t)
+  (let ((pf "~/Projects/ede.el"))
+	(if (file-exists-p pf)
+		(load pf)))
+  )
 
 (add-hook 'c-initialization-hook 'c-libraries-load)

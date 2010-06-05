@@ -25,6 +25,7 @@
  '(quack-pretty-lambda-p t)
  '(quack-run-scheme-always-prompts-p nil)
  '(save-place t nil (saveplace))
+ '(savehist-mode t nil (savehist))
  '(scheme-macro-expand-command "(debug-expand (quote %s))")
  '(scheme-mit-dialect nil)
  '(scheme-program-name "ypsilon")

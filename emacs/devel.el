@@ -81,3 +81,10 @@
 (let ((pf "~/Projects/ede.el"))
   (if (file-exists-p pf)
 	  (load pf)))
+
+;; Yasnippets
+(require 'yasnippet)
+(yas/initialize)
+
+(setq yas/root-directory  "~/dotfiles/emacs/snippets")
+(yas/load-directory yas/root-directory)

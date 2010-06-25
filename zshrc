@@ -6,11 +6,18 @@ zle -N insert-files
 autoload -U predict-on
 zle -N predict-on
 
+gray=$'%{\e[1;30m%}'
+blue=$'%{\e[1;34m%}'
+red=$'%{\e[1;31m%}'
+normal=$'%{\e[0m%}'
+
 if [ -n "$SSH_CONNECTION" ]; then
-	PROMPT=$'%{\e[1;30m%}%m %{\e[1;34m%}%~ %{\e[1;31m%}%#%{\e[0m%} '
+	PROMPT_HOST="$gray%m "
 else
-	PROMPT=$'%{\e[1;34m%}%~ %{\e[1;31m%}%#%{\e[0m%} '
+	PROMPT_HOST=''
 fi
+
+PROMPT="${PROMPT_HOST}${blue}%~ ${red}%#${normal} "
 
 precmd() {
 	[[ -t 1 ]] || return

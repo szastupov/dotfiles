@@ -32,6 +32,7 @@
  '(scroll-bar-mode nil)
  '(scroll-conservatively 10000)
  '(scroll-step 1)
+ '(semanticdb-default-save-directory "~/.emacs.d/semanticdb")
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tab-width 4)

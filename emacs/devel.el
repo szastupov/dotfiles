@@ -2,7 +2,7 @@
   (interactive)
   (compile
    (concat "make CFLAGS='-Wall -ggdb' "
-		   (car (split-string (buffer-name) "\\.")))))
+           (car (split-string (buffer-name) "\\.")))))
 
 (defun devel-hook ()
   (auto-fill-mode 1)
@@ -17,6 +17,7 @@
   (compile compile-command))
 
 (defun my-c-mode-hook ()
+  (subword-mode 1)
   (local-set-key "\C-cm" 'make)
   (c-toggle-auto-hungry-state 1)
   (c-toggle-auto-newline 0))
@@ -24,17 +25,18 @@
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
 (dolist (hook '(python-mode-hook
-				scheme-mode-hook
-				c-mode-hook
-				c++-mode-hook
-				objc-mode-hook
-				emacs-lisp-mode-hook
-				perl-mode-hook
-				html-mode-hook
-				java-mode-hook
-				tuareg-mode-hook
-				haskell-mode-hook
-				shell-script-mode))
+                scheme-mode-hook
+                c-mode-hook
+                c++-mode-hook
+                objc-mode-hook
+                emacs-lisp-mode-hook
+                perl-mode-hook
+                html-mode-hook
+                java-mode-hook
+                tuareg-mode-hook
+                haskell-mode-hook
+                octave-mode-hook
+                shell-script-mode))
   (add-hook hook 'devel-hook))
 
 (setq load-path (cons "~/dotfiles/emacs/site" load-path))
@@ -45,9 +47,9 @@
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 
 (setq auto-mode-alist
-	  (append '(("\\.ml[ily]?$" . tuareg-mode)
-				("\\.topml$" . tuareg-mode))
-			  auto-mode-alist))
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist))
 
 (defun my-tuareg-hook ()
   (local-set-key "\C-cm" 'make))
@@ -72,15 +74,15 @@
 
 (defun pkg-config (pkg)
   (let* ((cmd  (concat "pkg-config --cflags-only-I " pkg))
-		 (output (shell-command-to-string cmd)))
-	(split-string (replace-regexp-in-string "-I" "" output))))
+         (output (shell-command-to-string cmd)))
+    (split-string (replace-regexp-in-string "-I" "" output))))
 
 (global-ede-mode 1)
 (require 'semantic/sb)
 (semantic-mode 1)
 (let ((pf "~/Projects/ede.el"))
   (if (file-exists-p pf)
-	  (load pf)))
+      (load pf)))
 
 ;; Yasnippets
 (require 'yasnippet)

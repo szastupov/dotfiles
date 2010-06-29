@@ -79,10 +79,15 @@
 
 (global-ede-mode 1)
 (require 'semantic/sb)
-(semantic-mode 1)
 (let ((pf "~/Projects/ede.el"))
   (if (file-exists-p pf)
       (load pf)))
+
+(semantic-mode 1)
+(require 'semantic/db-global)
+(semanticdb-enable-gnu-global-databases 'c-mode)
+(semanticdb-enable-gnu-global-databases 'c++-mode)
+(require 'semantic/ia)
 
 ;; Yasnippets
 (require 'yasnippet)

@@ -18,6 +18,7 @@
 
 (defun my-c-mode-hook ()
   (subword-mode 1)
+  (company-mode 1)
   (local-set-key "\C-cm" 'make)
   (c-toggle-auto-hungry-state 1)
   (c-toggle-auto-newline 0))
@@ -95,3 +96,7 @@
 
 (setq yas/root-directory  "~/dotfiles/emacs/snippets")
 (yas/load-directory yas/root-directory)
+
+
+;; Company
+(autoload 'company-mode "company" nil t)

@@ -7,6 +7,7 @@
  '(auto-insert-query nil)
  '(c-basic-offset 4)
  '(c-default-style "bsd")
+ '(c-offsets-alist (quote ((inextern-lang . 0) (innamespace . 0))))
  '(column-number-mode t)
  '(compilation-auto-jump-to-first-error t)
  '(compilation-scroll-output 1)

@@ -64,6 +64,7 @@
 ;; Cedet
 
 (defun my-cedet-hook ()
+  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
   (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
   (local-set-key "\C-cj" 'semantic-ia-fast-jump)
@@ -77,17 +78,43 @@
          (output (shell-command-to-string cmd)))
     (split-string (replace-regexp-in-string "-I" "" output))))
 
-(global-ede-mode 1)
-(require 'semantic/sb)
-(let ((pf "~/Projects/ede.el"))
-  (if (file-exists-p pf)
-      (load pf)))
+(defun c-libraries-load ()
+  (interactive)
+  (load "~/src/cedet-1.0/common/cedet.el")
+  (semantic-load-enable-code-helpers)
+  (require 'semantic-ia)
+  (require 'semantic-gcc)
 
-(semantic-mode 1)
-(require 'semantic/db-global)
-(semanticdb-enable-gnu-global-databases 'c-mode)
-(semanticdb-enable-gnu-global-databases 'c++-mode)
-(require 'semantic/ia)
+  (setq-mode-local c-mode semanticdb-find-default-throttle
+                   '(project unloaded system recursive))
+  (setq-mode-local c++-mode semanticdb-find-default-throttle
+                   '(project unloaded system recursive))
+
+  (require 'semanticdb-ectag)
+  (semantic-load-enable-primary-exuberent-ctags-support)
+  (require 'semanticdb-global)
+  (semanticdb-enable-gnu-global-databases 'c-mode)
+  (semanticdb-enable-gnu-global-databases 'c++-mode)
+
+  (global-ede-mode t)
+  (let ((pf "~/Projects/ede.el"))
+    (if (file-exists-p pf)
+        (load pf)))
+  )
+
+(add-hook 'c-initialization-hook 'c-libraries-load)
+
+;; (global-ede-mode 1)
+;; (require 'semantic/sb)
+
+;; (semantic-mode 1)
+;; (require 'semantic/db-global)
+;; (semanticdb-enable-gnu-global-databases 'c-mode)
+;; (semanticdb-enable-gnu-global-databases 'c++-mode)
+;; (require 'semantic/ia)
+;; (let ((pf "~/Projects/ede.el"))
+;;   (if (file-exists-p pf)
+;;       (load pf)))
 
 ;; Yasnippets
 (require 'yasnippet)

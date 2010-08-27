@@ -41,6 +41,7 @@
  '(tooltip-delay 0.5)
  '(tooltip-mode t)
  '(tuareg-library-path "/usr/lib64/ocaml")
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(use-dialog-box nil))
 
 (custom-set-faces
@@ -91,6 +92,6 @@
 
 (setq frame-title-format '("" "%b%& - emacs"))
 
-(load "~/dotfiles/emacs/devel")
+(require 'uniquify)
 
-(server-start)
+(load "~/dotfiles/emacs/devel")

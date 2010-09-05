@@ -1,7 +1,7 @@
 # vim:syntax=gitconfig
 [user]
 	name = Stepan Zastupov
-	email = redchrom@gmail.com
+	email = stepan.zastupov@gmail.com
 [color]
 	ui = true
 [url "git://git.gnome.org/"]

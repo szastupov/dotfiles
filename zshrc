@@ -69,7 +69,7 @@ alias sudo='A=`alias` sudo '
 
 (grep --help 2>/dev/null |grep -- --color) >/dev/null && \
 export GREP_OPTIONS='--color=auto'
-
+export PYTHONSTARTUP=~/.pythonstartup
 export EDITOR=vim
 
 # automatically remove duplicates from these arrays

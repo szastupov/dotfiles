@@ -1,9 +1,3 @@
-(defun make-cur ()
-  (interactive)
-  (compile
-   (concat "make CFLAGS='-Wall -ggdb' "
-           (car (split-string (buffer-name) "\\.")))))
-
 (defun devel-hook ()
   (auto-fill-mode 1)
   (setq show-trailing-whitespace t)
@@ -36,6 +30,7 @@
                 tuareg-mode-hook
                 haskell-mode-hook
                 octave-mode-hook
+                cmake-mode-hook
                 shell-script-mode))
   (add-hook hook 'devel-hook))
 
@@ -125,3 +120,8 @@
 
 ;; Magit
 (autoload 'magit-status "magit" nil t)
+
+;; Cmake
+(autoload 'cmake-mode "cmake-mode" t)
+(add-to-list 'auto-mode-alist '("CMakeLists\\.txt\\'" . cmake-mode))
+(add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))

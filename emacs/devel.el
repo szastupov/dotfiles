@@ -122,3 +122,6 @@
 
 (setq yas/root-directory  "~/dotfiles/emacs/snippets")
 (yas/load-directory yas/root-directory)
+
+;; Magit
+(autoload 'magit-status "magit" nil t)

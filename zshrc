@@ -71,6 +71,7 @@ alias sudo='A=`alias` sudo '
 export GREP_OPTIONS='--color=auto'
 export PYTHONSTARTUP=~/.pythonstartup
 export EDITOR=vim
+export GIT_EDITOR=$EDITOR
 
 # automatically remove duplicates from these arrays
 typeset -U path cdpath fpath manpath

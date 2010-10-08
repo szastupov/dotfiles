@@ -65,6 +65,8 @@
  '(font-lock-variable-name-face ((((class color) (min-colors 88) (background dark)) nil)))
  '(fringe ((((class color) (background dark)) nil)))
  '(highlight ((((class color) (min-colors 88) (background dark)) (:background "#222222"))))
+ '(magit-diff-add ((((class color) (background dark)) (:foreground "green"))))
+ '(magit-diff-del ((((class color) (background dark)) (:foreground "red"))))
  '(minibuffer-prompt ((((background dark)) (:foreground "#729fcf"))))
  '(mode-line ((((class color) (min-colors 88)) (:background "grey75" :foreground "black"))))
  '(quack-pltish-comment-face ((((class color) (background dark)) (:inherit font-lock-comment-face))))

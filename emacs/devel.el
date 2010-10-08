@@ -67,6 +67,7 @@
   (local-set-key "\C-cs" 'semantic-ia-show-summary))
 
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
+(add-hook 'perl-mode-hook 'my-cedet-hook)
 
 (defun pkg-config (pkg)
   (let* ((cmd  (concat "pkg-config --cflags-only-I " pkg))

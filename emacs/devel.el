@@ -17,9 +17,8 @@
   (c-toggle-auto-newline 0))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
-(setq auto-mode-alist
-      (cons '("\\.h$" . c++-mode)
-            auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.glsl$" . c-mode))
 
 (dolist (hook '(python-mode-hook
                 scheme-mode-hook

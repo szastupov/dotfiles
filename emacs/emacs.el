@@ -19,6 +19,7 @@
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
  '(mouse-wheel-mode t)
+ '(org-replace-disputed-keys t)
  '(quack-default-program "ypsilon")
  '(quack-fontify-style (quote plt))
  '(quack-fontify-threesemi-p nil)

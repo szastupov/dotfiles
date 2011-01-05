@@ -77,6 +77,7 @@
  '(quack-pltish-selfeval-face ((((class color) (background dark)) (:inherit font-lock-constant-face))))
  '(region ((((class color) (min-colors 88) (background dark)) (:background "#253B76")))))
 
+(fset 'yes-or-no-p 'y-or-n-p)
 
 (defvar tmp-autosave-dir "~/.emacs.d/autosave/")
 

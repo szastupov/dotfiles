@@ -18,7 +18,7 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.glsl$" . c-mode))
+(add-to-list 'auto-mode-alist '("\\.glsl$" . c++-mode))
 
 (dolist (hook '(python-mode-hook
                 scheme-mode-hook
@@ -33,6 +33,7 @@
                 haskell-mode-hook
                 octave-mode-hook
                 cmake-mode-hook
+                nxml-mode-hook
                 shell-script-mode))
   (add-hook hook 'devel-hook))
 

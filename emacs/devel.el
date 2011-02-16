@@ -34,6 +34,8 @@
                 octave-mode-hook
                 cmake-mode-hook
                 nxml-mode-hook
+                js-mode-hook
+                ruby-mode-hook
                 shell-script-mode))
   (add-hook hook 'devel-hook))
 

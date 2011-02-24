@@ -1,5 +1,5 @@
 #!/bin/sh
-link="gdbinit gitconfig inputrc vim zshrc screenrc"
+link="gdbinit gitconfig inputrc vim zshrc screenrc bashrc"
 
 for i in $link; do
 	ln -fns $(pwd)/$i $HOME/.$i

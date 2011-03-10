@@ -20,6 +20,8 @@
 (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.glsl$" . c++-mode))
 
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+
 (dolist (hook '(python-mode-hook
                 scheme-mode-hook
                 c-mode-hook

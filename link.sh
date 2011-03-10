@@ -1,5 +1,5 @@
 #!/bin/sh
-link="gdbinit gitconfig inputrc vim zshrc screenrc bashrc"
+link="gdbinit gitconfig inputrc vim zshrc screenrc bashrc pythonstartup"
 
 for i in $link; do
 	ln -fns $(pwd)/$i $HOME/.$i

@@ -6,10 +6,10 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-gray=$'\e[1;30m'
-blue=$'\e[1;34m'
-red=$'\e[1;31m'
-normal=$'\e[0m'
+gray=$'\[\e[1;30m\]'
+blue=$'\[\e[1;34m\]'
+red=$'\[\e[1;31m\]'
+normal=$'\[\e[0m\]'
 PS1="$gray\h ${blue}\w ${red}\$${normal} "
 
 SAVEHIST=5000

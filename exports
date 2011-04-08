@@ -1,0 +1,4 @@
+export GREP_OPTIONS='--color=auto'
+export PYTHONSTARTUP=~/.pythonstartup
+export EDITOR=vim
+export GIT_EDITOR=$EDITOR

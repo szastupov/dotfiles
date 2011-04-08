@@ -34,33 +34,7 @@ SAVEHIST=5000
 HISTSIZE=5000
 DIRSTACKSIZE=20
 
-setopt  APPEND_HISTORY
-setopt  HIST_IGNORE_ALL_DUPS
-setopt  HIST_IGNORE_SPACE
-setopt  HIST_REDUCE_BLANKS
-setopt  No_Beep
-
-alias vi='vim'
-alias ls='ls --color=auto'
-alias la='ls -lah --color=auto'
-alias ll='ls -lh --color=auto'
-alias du='du -h'
-alias cp='cp -v'
-alias mv='mv -v'
-alias rm='rm -v'
-alias df='df -h'
-alias sr='ssh -l root'
-alias go='gnome-open'
-alias wcat='wget -q -O -'
-alias ypsilon='rlwrap ypsilon'
-alias ocaml='rlwrap ocaml'
-alias ec='emacsclient'
-alias sudo='A=`alias` sudo '
-
-export GREP_OPTIONS='--color=auto'
-export PYTHONSTARTUP=~/.pythonstartup
-export EDITOR=vim
-export GIT_EDITOR=$EDITOR
+setopt nobeep histignorealldups histignorespace histreduceblanks
 
 # automatically remove duplicates from these arrays
 typeset -U path cdpath fpath manpath
@@ -96,7 +70,7 @@ zstyle ':completion:*' substitute 1
 zstyle ':completion:*' use-compctl true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' word true
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
 
@@ -113,3 +87,6 @@ bindkey "^[OA" history-search-backward
 bindkey "^[[A" history-search-backward
 bindkey "^[OB" history-search-forward
 bindkey "^[[B" history-search-forward
+
+. ~/dotfiles/aliases
+. ~/dotfiles/exports

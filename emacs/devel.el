@@ -38,7 +38,7 @@
                 nxml-mode-hook
                 js-mode-hook
                 ruby-mode-hook
-                shell-script-mode))
+                sh-mode-hook))
   (add-hook hook 'devel-hook))
 
 (setq load-path (cons "~/dotfiles/emacs/site" load-path))

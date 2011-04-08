@@ -21,22 +21,12 @@ PROMPT="${PROMPT_HOST}${blue}%~ ${red}%#${normal} "
 
 precmd() {
 	[[ -t 1 ]] || return
-	case $TERM in
-		*xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]0;[%~]\a"
-		;;
-		screen) print -Pn "\ek[%~]\e\\"
-		;;
-	esac
+	print -Pn "\e]0;[%m:%~]\a"
 }
 
 preexec() {
 	[[ -t 1 ]] || return
-	case $TERM in
-		*xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]0;<$1> [%~]\a"
-		;;
-		screen) print -Pn "\ek<$1> [%~]\e\\"
-		;;
-	esac
+	print -Pn "\e]0;<$1> [%m:%~]\a"
 }
 
 HISTFILE=~/.zhistory
@@ -67,7 +57,6 @@ alias ocaml='rlwrap ocaml'
 alias ec='emacsclient'
 alias sudo='A=`alias` sudo '
 
-(grep --help 2>/dev/null |grep -- --color) >/dev/null && \
 export GREP_OPTIONS='--color=auto'
 export PYTHONSTARTUP=~/.pythonstartup
 export EDITOR=vim
@@ -107,7 +96,6 @@ zstyle ':completion:*' substitute 1
 zstyle ':completion:*' use-compctl true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' word true
-eval `dircolors`
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh

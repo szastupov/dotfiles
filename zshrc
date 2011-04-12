@@ -88,5 +88,4 @@ bindkey "^[[A" history-search-backward
 bindkey "^[OB" history-search-forward
 bindkey "^[[B" history-search-forward
 
-. ~/dotfiles/aliases
-. ~/dotfiles/exports
+. ~/dotfiles/common

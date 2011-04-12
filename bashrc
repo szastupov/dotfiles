@@ -11,5 +11,4 @@ PS1="$gray\h ${blue}\w ${red}\$${normal} "
 SAVEHIST=5000
 HISTSIZE=5000
 
-. ~/dotfiles/aliases
-. ~/dotfiles/exports
+. ~/dotfiles/common

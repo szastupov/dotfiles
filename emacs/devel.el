@@ -12,6 +12,7 @@
 
 (defun my-c-mode-hook ()
   (subword-mode 1)
+  (gtags-mode)
   (local-set-key "\C-cm" 'make)
   (c-toggle-auto-hungry-state 1)
   (c-toggle-auto-newline 0))
@@ -100,9 +101,12 @@
   (semanticdb-enable-gnu-global-databases 'c++-mode)
 
   (global-ede-mode t)
-  (let ((pf "~/Projects/ede.el"))
+  (let ((pf "~/Projects/ede.el")
+        (gt "/usr/share/gtags/gtags.el"))
     (if (file-exists-p pf)
-        (load pf)))
+        (load pf))
+    (if (file-exists-p gt)
+        (load gt)))
   )
 
 (add-hook 'c-initialization-hook 'c-libraries-load)

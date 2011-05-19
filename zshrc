@@ -5,6 +5,8 @@ autoload -U insert-files
 zle -N insert-files
 autoload -U predict-on
 zle -N predict-on
+autoload select-word-style
+select-word-style Bash
 
 gray=$'%{\e[1;30m%}'
 blue=$'%{\e[1;34m%}'

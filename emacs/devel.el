@@ -64,64 +64,15 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
-;; Cedet
-
-(defun my-cedet-hook ()
-  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
-  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-  (local-set-key "\C-cj" 'semantic-ia-fast-jump)
-  (local-set-key "\C-cq" 'semantic-ia-show-doc)
-  (local-set-key "\C-cs" 'semantic-ia-show-summary))
-
-(add-hook 'c-mode-common-hook 'my-cedet-hook)
-(add-hook 'perl-mode-hook 'my-cedet-hook)
-
 (defun pkg-config (pkg)
   (let* ((cmd  (concat "pkg-config --cflags-only-I " pkg))
          (output (shell-command-to-string cmd)))
     (split-string (replace-regexp-in-string "-I" "" output))))
 
-(defun c-libraries-load ()
-  (interactive)
-  (load "~/src/cedet-1.0/common/cedet.el")
-  (semantic-load-enable-code-helpers)
-  (require 'semantic-ia)
-  (require 'semantic-gcc)
-
-  (setq-mode-local c-mode semanticdb-find-default-throttle
-                   '(project unloaded system recursive))
-  (setq-mode-local c++-mode semanticdb-find-default-throttle
-                   '(project unloaded system recursive))
-
-  (require 'semanticdb-ectag)
-  (semantic-load-enable-primary-exuberent-ctags-support)
-  (require 'semanticdb-global)
-  (semanticdb-enable-gnu-global-databases 'c-mode)
-  (semanticdb-enable-gnu-global-databases 'c++-mode)
-
-  (global-ede-mode t)
-  (let ((pf "~/Projects/ede.el")
-        (gt "/usr/share/gtags/gtags.el"))
-    (if (file-exists-p pf)
-        (load pf))
-    (if (file-exists-p gt)
-        (load gt)))
-  )
-
-(add-hook 'c-initialization-hook 'c-libraries-load)
-
-;; (global-ede-mode 1)
-;; (require 'semantic/sb)
-
-;; (semantic-mode 1)
-;; (require 'semantic/db-global)
-;; (semanticdb-enable-gnu-global-databases 'c-mode)
-;; (semanticdb-enable-gnu-global-databases 'c++-mode)
-;; (require 'semantic/ia)
-;; (let ((pf "~/Projects/ede.el"))
-;;   (if (file-exists-p pf)
-;;       (load pf)))
+;; Gtags
+(let ((gt "/usr/share/gtags/gtags.el"))
+  (if (file-exists-p gt)
+      (load gt)))
 
 ;; Magit
 (autoload 'magit-status "magit" nil t)

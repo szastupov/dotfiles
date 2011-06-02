@@ -1,8 +1,7 @@
 (defun devel-hook ()
   (auto-fill-mode 1)
   (setq show-trailing-whitespace t)
-  (local-set-key "\r" 'newline-and-indent)
-  (local-set-key [return] 'newline-and-indent))
+  (local-set-key (kbd "RET") 'newline-and-indent))
 
 (defun make ()
   "Saves all unsaved buffers, and runs 'compile'."
@@ -25,8 +24,7 @@
 
 (dolist (hook '(python-mode-hook
                 scheme-mode-hook
-                c-mode-hook
-                c++-mode-hook
+                c-mode-common-hook
                 objc-mode-hook
                 emacs-lisp-mode-hook
                 perl-mode-hook

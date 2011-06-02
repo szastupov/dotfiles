@@ -68,9 +68,7 @@
     (split-string (replace-regexp-in-string "-I" "" output))))
 
 ;; Gtags
-(let ((gt "/usr/share/gtags/gtags.el"))
-  (if (file-exists-p gt)
-      (load gt)))
+(require 'gtags)
 
 ;; Magit
 (autoload 'magit-status "magit" nil t)

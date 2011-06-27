@@ -99,3 +99,8 @@
 (require 'uniquify)
 
 (load "~/dotfiles/emacs/devel")
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq fill-column 100)
+            (auto-fill-mode 1)))

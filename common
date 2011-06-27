@@ -19,6 +19,6 @@ alias sudo='A=`alias` sudo '
 
 #android stuff
 export SDK=/home/stepan/opt/android-sdk-linux_x86
-export NDK=/home/stepan/opt/android-ndk-r5b
+export NDK=/home/stepan/opt/android-ndk-r5c
 export ANDROID_NDK_TOOLCHAIN_ROOT=~/opt/android-toolchain
 alias android-cmake='cmake -DCMAKE_TOOLCHAIN_FILE=~/opt/android-cmake/toolchain/android.toolchain.cmake'

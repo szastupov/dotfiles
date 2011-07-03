@@ -43,7 +43,8 @@
  '(tooltip-mode t)
  '(tuareg-library-path "/usr/lib64/ocaml")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
- '(use-dialog-box nil))
+ '(use-dialog-box nil)
+ '(x-select-enable-clipboard t))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.

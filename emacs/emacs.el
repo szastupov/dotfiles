@@ -44,6 +44,7 @@
  '(tuareg-library-path "/usr/lib64/ocaml")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(use-dialog-box nil)
+ '(which-function-mode t)
  '(x-select-enable-clipboard t))
 
 (custom-set-faces

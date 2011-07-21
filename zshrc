@@ -7,17 +7,12 @@ autoload -U predict-on
 zle -N predict-on
 autoload select-word-style && select-word-style Bash
 
-gray=$'%{\e[1;30m%}'
-blue=$'%{\e[1;34m%}'
-red=$'%{\e[1;31m%}'
-normal=$'%{\e[0m%}'
+local gray=$'%{\e[1;30m%}'
+local blue=$'%{\e[1;34m%}'
+local red=$'%{\e[1;31m%}'
+local normal=$'%{\e[0m%}'
 
-if [ -n "$SSH_CONNECTION" ]; then
-	PROMPT_HOST="$gray%m "
-else
-	PROMPT_HOST=''
-fi
-
+[ -n "$SSH_CONNECTION" ] &&	local PROMPT_HOST="$gray%m "
 [[ -t 1 ]] && PROMPT="${PROMPT_HOST}${blue}%~ ${red}%#${normal} "
 
 case $TERM in

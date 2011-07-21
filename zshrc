@@ -5,8 +5,7 @@ autoload -U insert-files
 zle -N insert-files
 autoload -U predict-on
 zle -N predict-on
-autoload select-word-style
-select-word-style Bash
+autoload select-word-style && select-word-style Bash
 
 gray=$'%{\e[1;30m%}'
 blue=$'%{\e[1;34m%}'
@@ -19,17 +18,34 @@ else
 	PROMPT_HOST=''
 fi
 
-PROMPT="${PROMPT_HOST}${blue}%~ ${red}%#${normal} "
+[[ -t 1 ]] && PROMPT="${PROMPT_HOST}${blue}%~ ${red}%#${normal} "
 
-precmd() {
-	[[ -t 1 ]] || return
-	print -Pn "\e]0;[%m:%~]\a"
-}
+case $TERM in
+    xterm*)
+        precmd() {
+	        print -Pn "\e]0;[%m:%~]\a"
+        }
 
-preexec() {
-	[[ -t 1 ]] || return
-	print -Pn "\e]0;<$1> [%m:%~]\a"
-}
+        preexec() {
+	        print -Pn "\e]0;<$1> [%m:%~]\a"
+        }
+        ;;
+    screen)
+        precmd() {
+            print -Pn "\ek[%~]\e\\"
+        }
+
+        preexec() {
+            print -Pn "\ek<$1> [%~]\e\\"
+        }
+        ;;
+    dumb)
+        unsetopt zle
+        unsetopt prompt_cr
+        unsetopt prompt_subst
+        unfunction precmd
+        unfunction preexec
+esac
 
 HISTFILE=~/.zhistory
 SAVEHIST=5000

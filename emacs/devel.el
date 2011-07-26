@@ -77,3 +77,31 @@
 (autoload 'cmake-mode "cmake-mode" t)
 (add-to-list 'auto-mode-alist '("CMakeLists\\.txt\\'" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))
+
+;;
+;; Define "sun" mode to get the continuation line indentation
+;; proper, ie. sun-like, in cc-mode
+;;
+(defun c-sun-get-continuation-proper (langelem)
+  (save-excursion
+    (goto-char (cdr langelem))
+    (let ((current-syntax (caar (c-guess-basic-syntax))))
+      (if (or (eq current-syntax 'statement)
+              (eq current-syntax 'statement-block-intro))
+          4 0))))
+
+(c-add-style
+ "illumos"
+ '((c-basic-offset . 4)
+   (c-comment-only-line-offset . 0)
+   (c-offsets-alist . ((statement-block-intro . +)
+                       (knr-argdecl-intro . +)
+                       ;; (substatement-open . 0)
+                       ;; (substatement-label . 0)
+                       (arglist-cont . c-sun-get-continuation-proper)
+                       (arglist-cont-nonempty . c-sun-get-continuation-proper)
+                       (arglist-close . 4)
+                       (arglist-intro . 4)
+                       (statement-cont . 4)
+                       (defun-block-intro . +)
+                       ))))

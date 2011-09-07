@@ -18,6 +18,7 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
  '(mouse-wheel-mode t)
  '(org-replace-disputed-keys t)
  '(quack-default-program "ypsilon")

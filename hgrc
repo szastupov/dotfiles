@@ -1,0 +1,36 @@
+[extensions]
+hgext.record=
+hgext.mq =
+hgext.color =
+hgext.pager =
+
+[color]
+mode = auto
+
+[pager]
+pager = LESS='FSRX' less
+ignore = push,incoming,outgoing,shelve,unshelve,clone,recommit
+quiet = True
+
+[email]
+from=stepan.zastupov@gmail.com
+
+[paths]
+onnv-gate=ssh://anon@hg.opensolaris.org//hg/onnv/onnv-gate
+
+[merge-tools]
+filemerge.gui=True
+filemerge.args=-a $base $local $other $output
+filemerge.priority=1
+filemerge.premerge=False
+
+meld.gui=True
+meld.priority=0
+meld.premerge=False
+
+gpyfm.gui=True
+gpyfm.priority=0
+gpyfm.premerge=False
+
+[ui]
+username=Stepan Zastupov <stepan.zastupov@gmail.com>

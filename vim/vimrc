@@ -22,6 +22,7 @@ set splitright
 set hidden " Hide buffers instead closing them, it's good when you need undo history on closed files
 set mouse=a	" Use mouse even in terminals (but you still need gvim)
 set completeopt=menu,longest
+set clipboard=unnamed
 
 " Complete options that acts on C-n
 set complete-=i	" Don't search in include files, it's too slow
@@ -30,8 +31,6 @@ set complete-=u " Also don't search in unloaded files
 syntax on
 set hlsearch
 set wildignore=*.o,*.obj,*.lo*,*.so,*.d " Ignore pattern for menu and completions
-set lispwords+=define-record-type,library,syntax-rules,fields,begin
-let g:is_mzscheme=1
 
 " Add ifdef HEADER
 function! s:insert_gates()

@@ -1,12 +1,16 @@
-export GREP_OPTIONS='--color=auto'
+if [ -f ~/.profile ]; then
+	source ~/.profile
+fi
+
+#export GREP_OPTIONS='-G'
 export PYTHONSTARTUP=~/.pythonstartup
 export EDITOR=vim
 export GIT_EDITOR=$EDITOR
 
 alias vi='vim'
-alias ls='ls --color=auto'
-alias la='ls -lah --color=auto'
-alias ll='ls -lh --color=auto'
+alias ls='ls -G'
+alias la='ls -lah -G'
+alias ll='ls -lh -G'
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
@@ -16,9 +20,3 @@ alias sr='ssh -l root'
 alias wcat='wget -q -O -'
 alias ec='emacsclient'
 alias sudo='A=`alias` sudo '
-
-#android stuff
-export SDK=/home/stepan/opt/android-sdk-linux_x86
-export NDK=/home/stepan/opt/android-ndk-r5c
-export ANDROID_NDK_TOOLCHAIN_ROOT=~/opt/android-toolchain
-alias android-cmake='cmake -DCMAKE_TOOLCHAIN_FILE=~/opt/android-cmake/toolchain/android.toolchain.cmake'

@@ -13,6 +13,11 @@ HISTCONTROL=ignoredups
 	#. `brew --prefix`/etc/bash_completion
 #fi
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 if [ -f ~/.bashrc.d/git ]; then
 	. ~/.bashrc.d/git 
 	PS1="${red}\$(parse_git_branch)${normal}$PS1"

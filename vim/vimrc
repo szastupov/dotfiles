@@ -23,6 +23,8 @@ set hidden " Hide buffers instead closing them, it's good when you need undo his
 set mouse=a	" Use mouse even in terminals (but you still need gvim)
 set completeopt=menu,longest
 set clipboard=unnamed
+set background=dark
+colorscheme solarized
 
 " Complete options that acts on C-n
 set complete-=i	" Don't search in include files, it's too slow

@@ -2,7 +2,7 @@ function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-gray=$'\[\e[1;30m\]'
+gray=$'\[\e[1;32m\]'
 blue=$'\[\e[1;34m\]'
 red=$'\[\e[1;31m\]'
 normal=$'\[\e[0m\]'

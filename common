@@ -12,13 +12,14 @@ if [ "$(uname -s)" == "Linux" ]; then
 	alias egrep='egrep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias grep='grep --color=auto'
-	alias ll='ls -l --color=auto'
-	alias ls='ls --color=auto'
-	alias la='ls -la --color=auto'
+	alias ll='ls -lh --color=auto'
+	alias ls='ls -h --color=auto'
+	alias la='ls -lah --color=auto'
 else
 	alias ls='ls -G'
 	alias la='ls -lah -G'
 	alias ll='ls -lh -G'
+	export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
 
 alias cp='cp -v'

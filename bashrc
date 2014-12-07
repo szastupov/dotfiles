@@ -1,3 +1,8 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -16,10 +21,5 @@ HISTCONTROL=ignoredups
 #if [ -f `brew --prefix`/etc/bash_completion ]; then
 	#. `brew --prefix`/etc/bash_completion
 #fi
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
 
 . ~/dotfiles/common
